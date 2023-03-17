@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Dancing+Script:wght@700&family=Oswald:wght@300&family=Passions+Conflict&family=Oswald:wght@300&display=swap');
+/* Resetleme */
+html{
+    height: 100%;
+}
+*{box-sizing: border-box;}
+body{
+    background-color: rgb(70, 70, 70);
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+ margin: 0;   
+ font-family: 'Oswald', sans-serif;
+}
+nav{
+    background-color: black;
+    display: flex;
+    text-align: center;
+    color: #fff;
+}
+
+/* hero */
+.hero{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.7)), url(img/logo1.png);
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 8%;
+    position: relative;
+    overflow: visible;
+}
+.hero-text{
+    position: absolute;
+    left: 75%;
+    top: 10%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 25px;
+    transition: 0.9s;
+    font-weight: bold;
+    overflow: visible;
+}
+.hakkimda-text{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    color: white;
+    transition: 0.9s;
+    font-weight: bold;
+    padding: 0 40px 0 0;
+}
+.ben{
+    width: 50%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+}
+
+h1{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+h2{
+    color: rgb(110, 110, 110);
+}
+.hak{
+    margin-top: 20px;
+}
+div{
+    overflow: auto;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* temel ayarlar */
+.mycontainer{
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    padding: 0 80px;
+    padding-bottom: 100px;
+}
+.content{
+    width: 100%;
+    margin-top: 60px;
+}
+.column-100{
+    width: 100%;
+}
+.column-75{
+    width: 75%;
+}
+.column-50{
+    width: 50%;
+}
+.column-25{
+    width: 25%;
+}
+.column-100,.column-75,.column-50,.column-25{
+    float: left;
+    padding: 20px;
+}
+
+
+/* iletim ve Maliyet */
+input,textarea,select{
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 7px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+.column-25 button{
+    margin-top: 22px;
+}
+iframe{
+    width: 100%;
+}
+.column-25 img{
+    transition: 0.4s;
+}
+.column-25 img:hover{
+    transform: scale(1.2);
+    cursor: pointer; 
+}
+input:focus{
+    outline: 1px solid orange;
+}
+textarea:focus{
+    outline: 1px solid orange;
+}
+
+::-webkit-scollbar{
+    width: 20px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 15px;
+}
+
+.column-100 .bilgi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(175, 175, 175);
+    
+}
+.column-100 .containers{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.column-100 .containers .card{
+    position: relative;
+    width: 30%;
+    height: 200px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+
+}
+.column-100 .containers .card .percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: visible;
+    
+    
+}
+.column-100 .containers .card .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+.column-100 .containers .card .percent svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: rgb(225, 225, 225);
+    transform: translate(5px,5px);
+}
+.column-100 .containers .card .percent svg circle:nth-child(2){
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (420 * var(--num))/100);
+    opacity: 0;
+    animation: cizgi 1s linear forwards;
+    animation-delay: 2.5s;
+}
+@keyframes cizgi{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.dot{
+    position:absolute;
+    inset:7px;
+    z-index: 10;
+    animation: sekil 2s linear forwards;
+}
+@keyframes sekil{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+.dot::before{
+    content: '';
+    position: absolute;
+    top:-5px;
+    left:50px;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--clr);
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr), 0 0 10px var(--clr);
+    
+}
+.number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: cizgi 1s linear forwards;
+    animation-delay: 2.5s;
+}
+.number h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+.number h2 span{
+    font-weight: 300;
+    color: #000;
+    font-size: 0.5em;
+}
+.number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+}
+.de{
+    margin-top: 0;
+}
+
+@media screen and (max-width: 999px){
+    
+    .mycontainer{
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+        
+    }
+    
+    .column-25,.column-50,.column-75{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        
+    }
+    .ben{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .hakkimda-text{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+
+    }
+    .column-100 .containers{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    } 
+    .column-100 .containers .card{
+        margin-top: 10px;
+        width: 50%;
+        
+    
+    }  
+}
